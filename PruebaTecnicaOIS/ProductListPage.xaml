@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PruebaTecnicaOIS.ProductListPage">
+    <ContentPage.Content>
+        <ListView 
+            ItemsSource="{Binding ProductList}" ItemTapped="ListView_ItemTapped" HasUnevenRows="True" SeparatorVisibility="Default" SeparatorColor="Gray">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                <ColumnDefinition Width="40"></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <Image Margin="5" Grid.Column="0" Source="{Binding image}" Aspect="AspectFit" HeightRequest="40" WidthRequest="40"></Image>
+                            <Grid Grid.Column="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                    <RowDefinition Height="auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Row="0" VerticalOptions="Center" VerticalTextAlignment="Center" Text="{Binding title}"></Label>
+                                <Label Grid.Row="1" VerticalOptions="Center" FontAttributes="Bold" FontSize="Medium" VerticalTextAlignment="Center" Text="{Binding price,StringFormat='{0:C2}'}"></Label>
+                                <Label Grid.Row="2" VerticalOptions="Center" TextColor="Gray" VerticalTextAlignment="Center" Text="{Binding category}"></Label>
+                            </Grid>
+                            <Image Grid.Column="2" Source="{Binding rate, Converter={StaticResource RateToImageConverter}}" HeightRequest="40" WidthRequest="40"></Image>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="PruebaTecnicaOIS.ProductDetailPage">
+    <ContentPage.Content>
+        <Grid Margin="30">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="{Binding image}" Aspect="AspectFit"></Image>
+            <Label Grid.Row="1" Text="{Binding title}" FontAttributes="Bold" FontSize="Large"></Label>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Label Grid.Column="0" Grid.Row="0" Text="{Binding price, StringFormat='{0:C2}'}"></Label>
+                <Label Grid.Column="0" Grid.Row="1" Text="{Binding category}"></Label>
+                <Label Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" FontSize="Large" FontAttributes="Bold" Text="{Binding rate}"></Label>
+            </Grid>
+            <Label TextColor="Gray" Grid.Row="3" Text="{Binding description}"></Label>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
