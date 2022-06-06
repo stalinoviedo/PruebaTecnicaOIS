@@ -23,7 +23,7 @@
             </Grid.RowDefinitions>
 
             <Label Grid.Column="1" Grid.Row="0"
-                Text="Login IOS APP" VerticalOptions="Center"
+                Text="Login OIS APP" VerticalOptions="Center"
                    HorizontalOptions="Center" FontSize="Large"
                    HorizontalTextAlignment="Center"
                    VerticalTextAlignment="Center"></Label>
